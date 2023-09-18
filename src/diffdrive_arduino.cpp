@@ -132,7 +132,8 @@ return_type DiffDriveArduino::write(const rclcpp::Time & /* time */, const rclcp
     return return_type::ERROR;
   }
 
-  arduino_.setMotorValues(l_wheel_.cmd / l_wheel_.rads_per_count / cfg_.loop_rate, r_wheel_.cmd / r_wheel_.rads_per_count / cfg_.loop_rate);
+  /* arduino_.setMotorValues(l_wheel_.cmd / l_wheel_.rads_per_count / cfg_.loop_rate, r_wheel_.cmd / r_wheel_.rads_per_count / cfg_.loop_rate); */
+  arduino_.setMotorValues(l_wheel_.cmd, r_wheel_.cmd);
 
 
 
