@@ -133,8 +133,8 @@ return_type DiffDriveArduino::write(const rclcpp::Time & /* time */, const rclcp
   }
 
   /* arduino_.setMotorValues(l_wheel_.cmd / l_wheel_.rads_per_count / cfg_.loop_rate, r_wheel_.cmd / r_wheel_.rads_per_count / cfg_.loop_rate); */
-  arduino_.setMotorValues(l_wheel_.cmd, r_wheel_.cmd);
-
+  arduino_.setMotorValues(l_wheel_.cmd, r_wheel_.cmd); // The cmd speed is in rad/s, e.g. 10m/s / wheel_r = 200 1/s rad
+  RCLCPP_INFO(logger_, "%f", l_wheel_.cmd); //Only for debugging
 
 
 
